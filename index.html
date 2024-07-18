@@ -4,18 +4,19 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-
     <title>Simple Liker</title>
   </head>
   <body>
-    <div id="modal">
+    <!-- Modal for displaying error messages, initially hidden -->
+    <div id="modal" class="hidden">
       <h2>Error!</h2>
       <p id="modal-message"></p>
     </div>
-
+    <!-- Header of the application -->
     <header>
       <h1>Simple Liker</h1>
     </header>
+    <!-- List of media posts with like buttons -->
     <article class="media-post" id="201811189">
       <header>
         <h2> <span>Byron Flatiron</span> says:</h2>
@@ -71,6 +72,7 @@
         </ul>
       </footer>
     </article>
+    <!-- Include the main JavaScript file -->
+    <script src="main.js" charset="utf-8"></script>
   </body>
-  <script src="main.js" charset="utf-8"></script>
 </html>
