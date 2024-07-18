@@ -4,7 +4,12 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 //add event listener to all heart elements
-
+document.addEventListener('DOMContentLoaded', () => {
+  const hearts = document.querySelectorAll('.like=glyph')
+  hearts.forEach(heart.forEach(heart => {
+    heart.addEventListener('click', handleLike)
+  }))
+})
 
 
 
