@@ -1,43 +1,47 @@
 // Defining text characters for the empty and full hearts for you to use later.
-const EMPTY_HEART = '♡'
-const FULL_HEART = '♥'
+const EMPTY_HEART = '♡';
+const FULL_HEART = '♥';
 
-// Your JavaScript code goes here!
-//add event listener to all heart elements
+// Wait for the DOM to fully load before executing script
 document.addEventListener('DOMContentLoaded', () => {
-  const hearts = document.querySelectorAll('.like=glyph')
-  hearts.forEach(heart.forEach(heart => {
-    heart.addEventListener('click', handleLike)
-  }))
-})
+  // Select all elements with the 'like-glyph' class (hearts)
+  const hearts = document.querySelectorAll('.like-glyph');
+  // Add a click event listener to each heart
+  hearts.forEach(heart => {
+    heart.addEventListener('click', handleLike);
+  });
+});
 
+// Function to handle the like action
 function handleLike(event) {
-  const heart = event.target
+  // Get the target heart that was clicked
+  const heart = event.target;
 
-  //simulate the server call to like or unlike the post
+  // Simulate a server call to like or unlike the post
   mimicServerCall()
-  .then(() => {
-    //if server call is succeesfull, toggle the heart state
-    if (heart.textContent === EMPTY_HEART) {
-      heart.textContent = FULL_HEART
-      heart.classList.add('activated-heart')
-    }else {
-      heart.textContent = EMPTY_HEART
-      heart.classList.remove('activated-heart')
-    }
-  })
-  .catch((error) => {
-    //if server the server call fails, show the error modal
-    const modal = document.getElementById('modal')
-    const modalMessage = document.getElementById('modal-message')
-    modalMessage.textContent = error //display error message
-    modal.classList.remove('hidden') // show the modal
-    //hide the modal after  3 seconds
-    setTimeout(() => {
-      modal.classList.add('hidden') // hide modal class
-    }, 3000)
-  })
+    .then(() => {
+      // If the server call is successful, toggle the heart state
+      if (heart.textContent === EMPTY_HEART) {
+        heart.textContent = FULL_HEART;
+        heart.classList.add('activated-heart'); // Add class to make heart appear red
+      } else {
+        heart.textContent = EMPTY_HEART;
+        heart.classList.remove('activated-heart'); // Remove class to make heart appear empty
+      }
+    })
+    .catch((error) => {
+      // If the server call fails, show the error modal
+      const modal = document.getElementById('modal');
+      const modalMessage = document.getElementById('modal-message');
+      modalMessage.textContent = error; // Display the error message
+      modal.classList.remove('hidden'); // Show the modal
+      // Hide the modal after 3 seconds
+      setTimeout(() => {
+        modal.classList.add('hidden'); // Hide the modal
+      }, 3000);
+    });
 }
+
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
