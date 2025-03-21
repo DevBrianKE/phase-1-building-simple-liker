@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
 // Function to handle the like action
 function handleLike(event) {
   // Get the target heart that was clicked
